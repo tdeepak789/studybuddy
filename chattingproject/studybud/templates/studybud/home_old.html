@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<style>
+    .home-container{
+        display:grid;
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+</style>
+<h4>Home page</h4>
+<div class="home-container">
+    <div>
+        {% include 'studybud/topics_component.html' %}
+    </div>
+
+    <div>
+        <h5>{{room_count}} rooms available</h5>
+        <a href="create-room/">create room</a>
+        {% include 'studybud/feed_component.html' %}
+    </div> 
+
+    <div>
+     {% include 'studybud/activity_component.html' %}
+    </div>
+   
+</div>
+
+
+{% endblock %}
